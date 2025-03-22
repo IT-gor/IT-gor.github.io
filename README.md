@@ -3,7 +3,6 @@
 This is my personal portfolio website built with **Next.js** and styled using **TailwindCSS**.  
 The site is designed to be lightweight, fast, and easy to maintain.  
 
-
 ## 🚀 Adjustments Made
 - Converted the site from **Server-Side Rendering (SSR)** to **Static Site Generation (SSG)** to make it compatible with GitHub Pages.  
 - Adjusted the Next.js config to disable the default image optimization to support static exporting.  
