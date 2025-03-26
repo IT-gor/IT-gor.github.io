@@ -4,9 +4,12 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiX, FiMenu } from 'react-icons/fi';
 import HireMeModal from '../HireMeModal';
-import logoLight from '../../public/images/logo-light.svg';
-import logoDark from '../../public/images/logo-dark.svg';
+// import logoLight from '../../public/images/logo-light.svg';
+// import logoDark from '../../public/images/logo-dark.svg';
+import logo from '../../public/images/logo.png';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
+import { emojis } from "@/data/emojis";
+
 
 function AppHeader() {
 	const [showMenu, setShowMenu] = useState(false);
@@ -49,21 +52,38 @@ function AppHeader() {
 					<div>
 						<Link href="/">
 							{activeTheme === 'dark' ? (
-								<Image
-									src={logoDark}
-									className="w-36 cursor-pointer"
+								<div className="flex items-center">
+								{/* <Image
+									// src={logoDark}
+									src={logo}
+									className="cursor-pointer"
+									style={{ color: '9a48d3' }}
 									alt="Dark Logo"
-									width={150}
-									height={120}
-								/>
+									// width={150}
+									// height={120}
+									width={50}
+									height={50}
+								/> */}
+								<span className="ml-2 text-xl gap-3 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+									{"{"}<span className="text-ternary-dark text-xl">{emojis[0]}</span>{"}"} 
+									<span className="text-2xl relative top-0.5"> COD<span className="font-medium	">Ygor</span></span>
+									</span>
+								</div>
+								
 							) : (
+								<div className="flex items-center">
 								<Image
-									src={logoLight}
-									className="w-36 cursor-pointer"
+									//src={logoLight}
+									src={logo}
+									className="cursor-pointer"
 									alt="Dark Logo"
-									width={150}
-									height={120}
+									// width={150}
+									// height={120}
+									width={50}
+									height={50}
 								/>
+								<span className="ml-2 text-xl .text-ternary-dark">CODYgor</span>
+								</div>
 							)}
 						</Link>
 					</div>

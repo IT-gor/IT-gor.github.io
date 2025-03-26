@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { FiClock, FiTag } from 'react-icons/fi';
+import { FiClock, FiTag, FiGithub } from 'react-icons/fi';
 import PagesMetaHead from '../../components/PagesMetaHead';
 import { projectsData } from '../../data/projectsData';
 import RelatedProjects from '../../components/projects/RelatedProjects';
-
+import Link from 'next/link';
 
 function ProjectSingle(props) {
 	return (
@@ -108,30 +108,9 @@ function ProjectSingle(props) {
 						</p>
 					</div>
 
-					{/* Single project social sharing */}
-					<div>
-						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-							{props.project.ProjectInfo.SocialSharingHeading}
-						</p>
-						{/* <div className="flex items-center gap-3 mt-5">
-							{props.project.ProjectInfo.SocialSharing.map(
-								(social, index) => {
-									<Link
-										key={index}
-										href={social.url}
-										target="__blank"
-										passHref={true}
-										aria-label="Share Project"
-										className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-									>
-										<span className="text-lg lg:text-2xl">
-											{social.icon}
-										</span>
-									</Link>;
-								}
-							)}
-						</div> */}
-					</div>
+					{/* Single project social sharing 
+						IG: deleted code for social sharing
+					*/}
 				</div>
 
 				{/*  Single project right section details */}
@@ -250,7 +229,8 @@ export async function getStaticProps({ params }) {
 		{/* Info */}
 		<div className="block sm:flex gap-0 sm:gap-10 mt-14">
 			<div className="w-full sm:w-1/3 text-left">
-				{/* Single project client details */}
+				{/* Single project client details 
+
 				<div className="mb-7">
 					<p className="font-general-regular text-2xl font-semibold text-secondary-dark dark:text-secondary-light mb-2">
 						{project.ProjectInfo.ClientHeading}
@@ -282,7 +262,7 @@ export async function getStaticProps({ params }) {
 						)}
 					</ul>
 				</div>
-
+				*/}
 				{/* Single project objectives */}
 				<div className="mb-7">
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
@@ -304,32 +284,30 @@ export async function getStaticProps({ params }) {
 						)}
 					</p>
 				</div>
-
-				{/* Single project social sharing */}
+					{/* Single project social sharing 
+						IG: deleted code for social sharing
+					*/}
+				{/* Github link to project */}
 				<div>
 					<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
-						{project.ProjectInfo.SocialSharingHeading}
+						{project.ProjectInfo.GithubHeading}<FiGithub className="inline md:pl-2 rounded-lg shadow-sm duration-500 text-3xl" />
 					</p>
-					{/* <div className="flex items-center gap-3 mt-5">
-						{project.ProjectInfo.SocialSharing.map(
-							(social, index) => {
-								<Link
-									key={index}
-									href={social.url}
-									target="__blank"
-									passHref={true}
-									aria-label="Share Project"
-									className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
-								>
-									<span className="text-lg lg:text-2xl">
-										{social.icon}
-									</span>
-								</Link>;
-							}
-						)}
-					</div> */}
+					<div className="flex items-center gap-3">
+						<Link
+							// key={index}
+							href={project.ProjectInfo.GithubLink}
+							target="__blank"
+							passHref={true}
+							aria-label="Github Repo"
+							// className="bg-ternary-light dark:bg-ternary-dark text-ternary-dark hover:text-primary- dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
+							className="text-ternary-dark hover:text-primary-dark dark:text-ternary-light dark:hover:text-primary-light font-general-regular"
+						>
+							<span>{project.ProjectInfo.GithubLink.split('://')[1]}</span>
+						</Link>
+					</div> 
 				</div>
 			</div>
+
 
 			{/*  Single project right section details */}
 			<div className="w-full sm:w-2/3 text-left mt-10 sm:mt-0">

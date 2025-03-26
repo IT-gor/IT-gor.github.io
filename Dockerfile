@@ -2,7 +2,8 @@
 FROM node:22.14.0
 
 # Set environment variables early to ensure they're available during build
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -21,4 +22,5 @@ COPY . .
 EXPOSE 3000
 
 # Start the Next.js app (npm run dev)
-CMD ["yarn", "run", "dev"]
+# CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev"]
