@@ -64,9 +64,9 @@ function AppHeader() {
 									width={50}
 									height={50}
 								/> */}
-								<span className="ml-2 text-xl gap-3 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+								<span className="ml-2 text-xl font-medium gap-3 bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
 									{"{"}<span className="text-ternary-dark text-xl">{emojis[0]}</span>{"}"} 
-									<span className="text-2xl relative top-0.5"> COD<span className="font-medium	">Ygor</span></span>
+									<span className="text-2xl relative top-0.5 font-normal"> COD<span className="font-medium">Ygor</span></span>
 									</span>
 								</div>
 								
